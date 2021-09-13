@@ -1,0 +1,29 @@
+C:\Users\sindhu>docker pull nginx:1.17.5
+1.17.5: Pulling from library/nginx
+8d691f585fa8: Pull complete
+5b07f4e08ad0: Pull complete
+abc291867bca: Pull complete
+Digest: sha256:922c815aa4df050d4df476e92daed4231f466acc8ee90e0e774951b0fd7195a4
+Status: Downloaded newer image for nginx:1.17.5
+docker.io/library/nginx:1.17.5
+
+C:\Users\sindhu>docker image ls
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+nginx        1.17.5    540a289bab6c   23 months ago   126MB
+
+C:\Users\sindhu>docker run --name my-nginx -d -p 8085:80 -v e:\docker-learn\html:/usr/share/nginx/html nginx:1.17.5
+d690382cd741618cba4410b83be629992ecd914f5cab248048dea3e1919fd9a1
+
+C:\Users\sindhu>docker container ls
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+d690382cd741   nginx:1.17.5   "nginx -g 'daemon of…"   45 seconds ago   Up 37 seconds   0.0.0.0:8085->80/tcp, :::8085->80/tcp   my-nginx
+
+C:\Users\sindhu>docker stop my-nginx
+my-nginx
+
+C:\Users\sindhu>docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\sindhu>docker container ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                      PORTS     NAMES
+d690382cd741   nginx:1.17.5   "nginx -g 'daemon of…"   3 minutes ago   Exited (0) 44 seconds ago             my-nginx

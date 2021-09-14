@@ -1,0 +1,12 @@
+E:\docker-learn\html>docker stop my-nginx
+my-nginx
+
+E:\docker-learn\html>docker container ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED        STATUS                    PORTS     NAMES
+d690382cd741   nginx:1.17.5   "nginx -g 'daemon of…"   10 hours ago   Exited (0) 10 hours ago             my-nginx
+
+E:\docker-learn\html>docker container rm d690382cd741
+d690382cd741
+
+E:\docker-learn\html>docker container ls -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
